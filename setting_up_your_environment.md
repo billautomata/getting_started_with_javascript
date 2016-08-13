@@ -30,12 +30,15 @@ git commit -m 'my first commit'
 # go create a github repository
 # do not add a README.md
 # get to the point that looks like this
-
+![](git setup.png)
 ```
 
 
 ```
 # take your git remote URL, looks like this - git@github.com:billautomata/my-project.git 
+# add the remote URL to your project as the origin
+# now when you run "git push" - it sends the data to github, a website
+
 git remote add origin git@github.com:billautomata/my-project.git
 
 
