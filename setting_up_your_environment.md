@@ -10,13 +10,18 @@ This is the node.js version manager, it lets you install different versions of n
 
 ## git basics 
 
+* Add your SSH key to your github account - [guide](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
+
 ### initial setup
 ```bash
 # make a new directory 
 mdkir my-project
 cd my-project
 
+# initialize git in the directory, only do this once
 git init
+
+# initialize npm in the directory, only do this once
 npm init 
 
 # create an empty file that will hold our code
@@ -26,7 +31,7 @@ touch index.js
 git add index.js 
 git add package.json
 
-# commit the code to the branch (master)
+# commit the code to the branch (master) with the message "my first commit"
 git commit -m 'my first commit'
 ```
 ```
@@ -41,8 +46,10 @@ git commit -m 'my first commit'
 # add the remote URL to your project as the origin
 # now when you run "git push" - it sends the data to github, a website
 
+# associate the github website repo with this git project
 git remote add origin git@github.com:billautomata/my-project.git
 
+# send the project to the github website
 git push -u origin master
 ```
 
@@ -55,14 +62,14 @@ git push origin master
 ```
 
 ## npm basics 
-npm is the package manager for node.  It is how you install your dependencies and tools.
+npm is the package manager for node.  It is how you install your dependencies and tools for your projects.  Every good node program uses npm in some way.
 
 ```
 # to install a package 
 nvm use 4                       # if you haven't already
 npm install --save bignum
-# this modifies package.json 
-git add package.json
+# this modifies package.json, so you have to track the changes 
+git add package.json  
 git commit -m 'updated dependencies'
 git push origin master 
 ```
@@ -70,15 +77,18 @@ git push origin master
 ## add some code to your `index.js`
 ```
 echo 'console.log(Date.now()' >> index.js
+# or 
+atom index.js
+# and add whatever...
 ```
 
 ## task runner 
 A very useful tool is a task runner called `supervisor`.  It 
 ```
 nvm use 4                       # if you haven't already
-npm install -g supervisor
+npm install -g supervisor       
 ```
-The `-g` flag installs the tool as a command line application.
+The `-g` flag installs the tool as a command line application globally.
 
 ```
 cd my-project
