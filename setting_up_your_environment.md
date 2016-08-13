@@ -83,7 +83,7 @@ atom index.js
 ```
 
 ## task runner 
-A very useful tool is a task runner called `supervisor`.  It 
+A very useful tool is a task runner called `supervisor`.  It watches the files you specify and when it notices changes it restarts the node program.
 ```
 nvm use 4                       # if you haven't already
 npm install -g supervisor       
